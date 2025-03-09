@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
-const config: Config = {
+export default {
   darkMode: ['class'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,14 +13,6 @@ const config: Config = {
         'ibm-plex-sans': ['IBM Plex Sans', 'sans-serif'],
         'bebas-neue': ['var(--bebas-neue)'],
       },
-      backgroundImage: {
-        pattern: "url('/images/pattern.webp')",
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -32,10 +24,10 @@ const config: Config = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          admin: 'hsl(var(--primary-admin))',
-        },
+        // primary: {
+        //   DEFAULT: "hsl(var(--primary))",
+        //   foreground: "hsl(var(--primary-foreground))",
+        // },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
@@ -61,6 +53,10 @@ const config: Config = {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
+        },
+        primary: {
+          DEFAULT: '#E7C9A5',
+          admin: '#25388C',
         },
         green: {
           DEFAULT: '#027A48',
@@ -105,8 +101,15 @@ const config: Config = {
       screens: {
         xs: '480px',
       },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      backgroundImage: {
+        pattern: "url('/images/pattern.webp')",
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
-};
-export default config;
+} satisfies Config;
